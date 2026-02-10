@@ -1,0 +1,160 @@
+# =====================================
+# Node / React / JavaScript
+# =====================================
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build directories
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+
+# Local env files (não sei se precisa, mas é bom ter)
+# .env
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
+# .env*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+.*.swp
+.*.swo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+*.lcov
+.nyc_output/
+
+# Cache
+.npm/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+.cache/
+.parcel-cache/
+
+# =====================================
+# Tailwind CSS
+# =====================================
+    
+# Generated CSS
+/styles/output.css
+/styles/tailwind.output.css
+
+# =====================================
+# PHP
+# =====================================
+
+# Composer
+vendor/
+composer.phar
+composer.lock
+
+# PHP Unit
+phpunit.xml
+.phpunit.cache/
+
+# PHP CS Fixer
+.php_cs
+.php_cs.cache
+.php-cs-fixer.cache
+
+# =====================================
+# Geral
+# =====================================
+
+# OS Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+*.temp
+*.old
+*.orig
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# IDE - VSCode
+.vscode/
+*.code-workspace
+
+# Temporary files
+tmp/
+temp/
+cache/
+
+# SSL Certificates
+*.pem
+*.key
+*.crt
+*.cer
+
+# Uploads (se você tiver pasta de uploads)
+uploads/*
+!uploads/.gitkeep
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Build tools
+.grunt/
+.sass-cache/
+
+# Debug
+debug.log
+error.log
+access.log
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.tar.gz
+*.rar
+
+# Virtual Machine crash logs
+hs_err_pid*
+
+# Others
+.history/
+.vscode-test/
+*.vsix
