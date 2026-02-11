@@ -66,8 +66,8 @@ coverage/
 # =====================================
     
 # Generated CSS
-/styles/output.css
-/styles/tailwind.output.css
+output.css
+tailwind.output.css
 
 # =====================================
 # PHP
