@@ -3,18 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://www.nerdfonts.com/assets/css/webfont.css"
+      rel="stylesheet"
+    />
     <link href="./output.css" rel="stylesheet" />
     <title>Site Pessoal</title>
   </head>
   <body class="text-mocha-text bg-mocha-base">
     <header>
       <nav
-        class="fixed top-0 left-0 w-full flex items-center justify-center gap-6 py-4 px-6 bg-mocha-crust/85 backdrop-blur-md z-auto border-b border-mocha-surface0"
+        class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex text-center items-center gap-2 px-2 py-2 rounded-full bg-mocha-crust/40 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20"
       >
-        <a href="#hero">Início</a>
-        <a href="#about">Sobre mim</a>
-        <a href="#projects">Projetos Acadêmicos</a>
+        <div class="flex gap-4">
+          <a href="#hero">
+            <div class="icon-buttons">
+              <i class="nf nf-fa-home"></i>Início
+            </div></a
+          >
+
+          <a href="#about"
+            ><div class="icon-buttons">
+              <i class="nf nf-fa-user"></i>Sobre mim
+            </div></a
+          >
+          <a href="#projects"
+            ><div class="icon-buttons">
+              <i class="nf nf-fa-briefcase"></i>Projetos
+            </div></a
+          >
+        </div>
       </nav>
     </header>
+    <main>
+      <section id="hero" class="min-h-screen flex items-center justify-center">
+        <h1 class="text-2xl font-bold text-mocha-mauve">Placeholder</h1>
+      </section>
+    </main>
   </body>
 </html>
