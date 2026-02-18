@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR" class="bg-mocha-crust">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,10 +7,18 @@
       href="https://www.nerdfonts.com/assets/css/webfont.css"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link href="./output.css" rel="stylesheet" />
     <title>Site Pessoal</title>
   </head>
-  <body class="text-mocha-text bg-mocha-base">
+  <body class="text-mocha-text bg-linear-to-b from-mocha-base to-mocha-crust">
     <header>
       <nav
         class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex text-center items-center gap-2 px-2 py-2 rounded-full bg-mocha-crust/40 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20"
@@ -27,18 +35,244 @@
               <i class="nf nf-fa-user"></i>Sobre mim
             </div></a
           >
+          <a href="#languages"
+            ><div class="icon-buttons">
+              <i class="nf nf-fa-code"></i>Linguagens
+            </div></a
+          >
           <a href="#projects"
             ><div class="icon-buttons">
               <i class="nf nf-fa-briefcase"></i>Projetos
+            </div></a
+          >
+          <a href="#contact"
+            ><div class="icon-buttons">
+              <i class="nf nf-fa-envelope"></i>Contato
             </div></a
           >
         </div>
       </nav>
     </header>
     <main>
-      <section id="hero" class="min-h-screen flex items-center justify-center">
-        <h1 class="text-2xl font-bold text-mocha-mauve">Placeholder</h1>
+      <section id="hero" class="section">
+        <div class="profile-wrapper">
+          <img
+            class="profile-img"
+            src="assets/img/profile.jpg"
+            alt="Foto do criador do site"
+          />
+        </div>
+        <h1 class="text-4xl font-sans mt-4 font-bold text-mocha-text">
+          Introducing
+        </h1>
+        <h2
+          class="text-8xl font-serif mt-4 font-normal italic text-mocha-mauve"
+        >
+          Fenyx
+        </h2>
+        <h3 class="text-4xl font-sans font-semibold text-mocha-subtext1 mt-4">
+          (Iago Anjos da Silva)
+        </h3>
+      </section>
+      <section class="section" id="about">
+        <h2 class="text-4xl font-mono mb-4 font-bold text-mocha-text">
+          Sobre mim
+        </h2>
+        <p
+          class="max-w-3xl font-sans text-center text-lg text-mocha-subtext0 font-medium mb-8"
+        >
+          Estudante de Desenolvimento de Sistemas, cursando terceiro ano na Etec
+          São José dos Campos. Sou entusiasta na aplicação da tecnologia e suas
+          colaborações com a sociedade. Meu principal objetivo é contribuir
+          ativamente em projetos impactantes e inovadores. Possuo foco em
+          produtividade, trabalho em equipe, otimização e segurança. Meu
+          objetivo é impulsionar ativamente o movimento do software livre.
+        </p>
+
+        <h3 class="text-2xl font-mono mt-8 mb-4 font-bold text-mocha-text">
+          Minha trajetória
+        </h3>
+        <p
+          class="max-w-3xl font-sans text-center text-lg text-mocha-subtext0 font-medium"
+        >
+          Desde os 4 anos, eu tive meu primeiro notebook, onde comecei a
+          explorar o mundo da tecnologia, design digital, games e
+          desenvolvimento de software. Comecei na programação em 2023, e desde
+          então, tenho me dedicado a aprender e aprimorar minhas habilidades.
+          Atualmente, estou focado em desenvolvimento web (Frontend/Backend) e
+          aplicativos nativos Flutter, mas também tenho interesse em outras
+          áreas da tecnologia, como inteligência artificial, DevOps e segurança
+          cibernética.
+        </p>
+      </section>
+      <section class="section" id="languages">
+        <h2 class="text-4xl font-mono mb-8 font-bold text-mocha-text">
+          Linguagens
+        </h2>
+        <div class="w-full overflow-hidden relative">
+          <div
+            class="pointer-events-none absolute top-0 bottom-0 left-0 w-24 z-10 bg-linear-to-r from-mocha-crust to-transparent"
+          ></div>
+          <div
+            class="pointer-events-none absolute top-0 bottom-0 right-0 w-24 z-10 bg-linear-to-l from-mocha-crust to-transparent"
+          ></div>
+
+          <div class="carousel-track flex gap-6 w-max animate-scroll">
+            <div class="carousel-card">
+              <i class="nf nf-md-language_html5 text-3xl text-mocha-peach"></i>
+              <h3 class="text-lg font-bold text-mocha-text">HTML5</h3>
+              <p class="text-sm text-mocha-subtext0">
+                Estruturação semântica e acessível
+              </p>
+            </div>
+            <div class="carousel-card">
+              <i class="nf nf-md-language_css3 text-3xl text-mocha-blue"></i>
+              <h3 class="text-lg font-bold text-mocha-text">CSS3</h3>
+              <p class="text-sm text-mocha-subtext0">
+                Estilização moderna e responsiva
+              </p>
+            </div>
+            <div class="carousel-card">
+              <i
+                class="nf nf-md-language_javascript text-3xl text-mocha-yellow"
+              ></i>
+              <h3 class="text-lg font-bold text-mocha-text">JavaScript</h3>
+              <p class="text-sm text-mocha-subtext0">Lógica e interatividade</p>
+            </div>
+            <div class="carousel-card">
+              <i class="nf nf-md-tailwind text-3xl text-mocha-teal"></i>
+              <h3 class="text-lg font-bold text-mocha-text">Tailwind CSS</h3>
+              <p class="text-sm text-mocha-subtext0">Utility-first framework</p>
+            </div>
+            <div class="carousel-card">
+              <i class="nf nf-md-language_python text-3xl text-mocha-green"></i>
+              <h3 class="text-lg font-bold text-mocha-text">Python</h3>
+              <p class="text-sm text-mocha-subtext0">Automação e backend</p>
+            </div>
+            <div class="carousel-card">
+              <i class="nf nf-dev-git text-3xl text-mocha-red"></i>
+              <h3 class="text-lg font-bold text-mocha-text">Git</h3>
+              <p class="text-sm text-mocha-subtext0">Controle de versão</p>
+            </div>
+            <div class="carousel-card">
+              <i class="nf nf-linux-archlinux text-3xl text-mocha-sapphire"></i>
+              <h3 class="text-lg font-bold text-mocha-text">Linux</h3>
+              <p class="text-sm text-mocha-subtext0">
+                Administração de sistemas
+              </p>
+            </div>
+            <div class="carousel-card">
+              <i class="nf nf-dev-mysql text-3xl text-mocha-rosewater"></i>
+              <h3 class="text-lg font-bold text-mocha-text">MySQL</h3>
+              <p class="text-sm text-mocha-subtext0">
+                Banco de dados relacional
+              </p>
+            </div>
+            <div class="carousel-card">
+              <i class="nf nf-dev-postgresql text-3xl text-mocha-sky"></i>
+              <h3 class="text-lg font-bold text-mocha-text">PostgreSQL</h3>
+              <p class="text-sm text-mocha-subtext0">Banco de dados avançado</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="projects">
+        <h2 class="text-4xl font-mono mb-8 font-bold text-mocha-text">
+          Projetos
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="project-card">
+            <a
+              class="text-xl font-bold text-mocha-mauve underline"
+              href="https://github.com/ImFenyx/ConcreteJungle-GameEtec"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Concrete Jungle</a
+            >
+            <p class="text-sm text-mocha-subtext0">
+              Jogo de plataforma 2D desenvolvido em GameMaker 2, feito na Etec
+              São José dos Campos. O projeto foi criado como parte de um curso
+              de desenvolvimento de jogos e é um exemplo do meu interesse em
+              design de jogos e desenvolvimento de software.
+            </p>
+          </div>
+          <div class="project-card">
+            <a
+              class="text-xl font-bold text-mocha-mauve underline"
+              href="https://github.com/ImFenyx/Projeto2"
+              target="_blank"
+              rel="noopener noreferrer"
+              >F-Tools Project</a
+            >
+            <p class="text-sm text-mocha-subtext0">
+              Um projeto Python no terminal para múltiplas ferramentas de
+              diversas categorias, incluindo automação, programação, cálculos,
+              cores, unidades, texto, randomização, entre outras. O projeto é
+              uma coleção de utilitários que visam facilitar tarefas comuns e
+              melhorar a produtividade em diferentes áreas.
+            </p>
+          </div>
+          <div class="project-card">
+            <a
+              class="text-xl font-bold text-mocha-mauve underline"
+              href="https://github.com/xvierdev/EGProj"
+              target="_blank"
+              rel="noopener noreferrer"
+              >EGProj</a
+            >
+            <p class="text-sm text-mocha-subtext0">
+              <span class="font-bold">(Colaborador)</span>
+              Um sistema em Python por terminal para praticar e aprimorar o
+              vocabulário de inglês de forma interativa e autônoma. Este projeto
+              foi desenvolvido de forma colaborativa para servir como uma
+              ferramenta prática de aprendizado, enquanto capacita os
+              participantes em programação Python, boas práticas de
+              desenvolvimento e metodologias ágeis.
+            </p>
+          </div>
+          <div class="project-card">
+            <a
+              class="text-xl font-bold text-mocha-mauve underline"
+              href="https://github.com/ImFenyx/Fenyx-s-CoreUtils"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Fenyx's Core Utils</a
+            >
+            <p class="text-sm text-mocha-subtext0">
+              Um projeto Python de software livre que visa criar uma coleção de
+              utilitários essenciais para sistemas operacionais baseados em
+              Linux. O projeto é inspirado nos GNU Core Utilities e tem como
+              objetivo fornecer ferramentas de linha de comando eficientes,
+              confiáveis e fáceis de usar para usuários e desenvolvedores.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="contact">
+        <h2 class="text-4xl font-mono mb-8 font-bold text-mocha-text">
+          Contato
+        </h2>
+        <p
+          class="max-w-3xl font-sans text-center text-lg text-mocha-subtext0 font-medium mb-8"
+        >
+          Estou aberto a oportunidades de colaboração, projetos e conexões
+          profissionais. Sinta-se à vontade para entrar em contato comigo
+          através dos seguintes canais:
+        </p>
+        <div class="flex flex-col items-center gap-4">
+          <a href="mailto:imfenyxdev@protonmail.com"
+            ><img
+              src="https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white"
+              alt="Botão para Proton Mail"
+          /></a>
+          <a href="https://www.linkedin.com/in/imfenyx/"
+            ><img
+              src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+              alt="Botão para LinkedIn"
+          /></a>
+        </div>
       </section>
     </main>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

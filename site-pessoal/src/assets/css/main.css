@@ -34,6 +34,8 @@
 
 @theme {
   --font-mono: "JetBrains Mono NF", monospace;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "IBM Plex Serif", serif;
   --color-mocha-rosewater: #f5e0dc;
   --color-mocha-flamingo: #f2cdcd;
   --color-mocha-pink: #f5c2e7;
@@ -92,6 +94,63 @@
 
 @layer components {
   .icon-buttons {
-    @apply flex flex-col text-xs gap-1;
+    @apply flex flex-col text-xs gap-1 cursor-pointer text-mocha-subtext0 hover:text-mocha-text
+    transition-colors duration-300;
+  }
+
+  .profile-wrapper {
+    @apply relative inline-block;
+  }
+
+  .profile-wrapper::before,
+  .profile-wrapper::after {
+    content: "";
+    @apply absolute w-20 h-20 z-20;
+    background: url("assets/svg/bg.svg") no-repeat center / contain;
+  }
+
+  .profile-wrapper::before {
+    @apply -top-4 -left-4;
+  }
+
+  .profile-wrapper::after {
+    @apply -bottom-4 -right-4;
+  }
+
+  .profile-img {
+    @apply w-64 h-64 rounded-full object-cover shadow-xl shadow-mocha-mauve/30;
+  }
+
+  .section {
+    @apply flex flex-col items-center justify-center min-h-screen;
+  }
+
+  .carousel-card {
+    @apply flex flex-col items-center text-center justify-center gap-3 w-48 h-48 rounded-2xl bg-mocha-surface0/60 border border-mocha-surface1 backdrop-blur-sm transition-all duration-300 hover:border-mocha-mauve hover:shadow-lg hover:shadow-mocha-mauve/10;
+  }
+
+  .project-card {
+    @apply flex flex-col items-start text-justify justify-center gap-3 m-4 rounded-2xl bg-mocha-surface0/60 border border-mocha-surface1 backdrop-blur-sm transition-all duration-300 hover:border-mocha-mauve hover:shadow-lg hover:shadow-mocha-mauve/10;
+  }
+
+  .project-card p {
+    @apply px-4 pb-4;
+  }
+
+  .project-card a {
+    @apply px-4 pt-4;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 15s linear infinite;
   }
 }
