@@ -94,7 +94,7 @@
 
 @layer components {
   .icon-buttons {
-    @apply flex flex-col text-xs gap-1 cursor-pointer text-mocha-subtext0 hover:text-mocha-text
+    @apply flex flex-col items-center justify-center text-center text-xs gap-1 cursor-pointer text-mocha-subtext0 hover:text-mocha-text
     transition-colors duration-300;
   }
 
