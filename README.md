@@ -2,7 +2,7 @@
 
 Exercicios da Etec SJC | PW III
 
-## Projetos
+## Projetos (do mais novo para o mais antigo)
 
 | Pasta           | Descrição                                     | Stack                              |
 | --------------- | --------------------------------------------- | ---------------------------------- |
