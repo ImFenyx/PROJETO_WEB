@@ -134,16 +134,23 @@
     @apply flex flex-col items-center text-center justify-center gap-3 w-48 h-48 rounded-2xl bg-mocha-surface0/60 border border-mocha-surface1 backdrop-blur-sm transition-all duration-300 hover:border-mocha-mauve hover:shadow-lg hover:shadow-mocha-mauve/10;
   }
 
-  .project-card {
+  .project-card,
+  .academic-card {
     @apply flex flex-col items-start text-justify justify-center gap-3 m-4 rounded-2xl bg-mocha-surface0/60 border border-mocha-surface1 backdrop-blur-sm transition-all duration-300 hover:border-mocha-mauve hover:shadow-lg hover:shadow-mocha-mauve/10;
   }
 
-  .project-card p {
+  .project-card p,
+  .academic-card p {
     @apply px-4 pb-4;
   }
 
-  .project-card a {
-    @apply px-4 pt-4;
+  .project-card a,
+  .academic-card h3 {
+    @apply px-4 pt-4 text-xl font-bold text-mocha-mauve;
+  }
+
+  .academic-card h4 {
+    @apply px-4 text-sm font-semibold text-mocha-text;
   }
 
   .animate-scroll {
