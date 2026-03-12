@@ -4,8 +4,6 @@ Projeto estático (HTML/CSS/JS) com Tailwind CSS para geração do arquivo `outp
 
 ## Como abrir o projeto
 
-### Método único (Tailwind em desenvolvimento)
-
 #### Pré-requisitos
 
 - Node.js 18+ instalado.
