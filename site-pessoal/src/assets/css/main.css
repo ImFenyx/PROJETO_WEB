@@ -139,6 +139,9 @@
     @apply flex flex-col items-start text-justify justify-center gap-3 m-4 rounded-2xl bg-mocha-surface0/60 border border-mocha-surface1 backdrop-blur-sm transition-all duration-300 hover:border-mocha-mauve hover:shadow-lg hover:shadow-mocha-mauve/10;
   }
 
+  .academic-card div {
+    @apply flex-col sm:flex-row;
+  }
   .project-card p,
   .academic-card p {
     @apply px-4 pb-4;
@@ -151,6 +154,10 @@
 
   .academic-card h4 {
     @apply px-4 text-sm font-semibold text-mocha-text;
+  }
+
+  p {
+    @apply max-w-sm sm:max-w-3xl;
   }
 
   .animate-scroll {
