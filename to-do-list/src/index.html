@@ -1,10 +1,229 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR" class="bg-mocha-crust">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>To-Do List</title>
     <link href="./output.css" rel="stylesheet" />
   </head>
-  <body></body>
+  <body
+    class="min-h-screen text-mocha-text bg-linear-to-br from-mocha-base via-mocha-mantle to-mocha-crust"
+  >
+    <main class="min-h-screen flex items-center justify-center p-4 sm:p-8">
+      <section class="todo-wrapper w-full max-w-3xl">
+        <div class="todo-header">
+          <h1 class="text-4xl sm:text-5xl font-serif italic text-mocha-mauve">
+            To-Do List
+          </h1>
+          <p class="text-mocha-subtext0 font-sans mt-2">
+            Organize suas tarefas com JavaScript puro.
+          </p>
+        </div>
+
+        <div class="todo-panel mt-6">
+          <form id="todo-form" class="todo-form">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div class="md:col-span-2">
+                <label for="task-input" class="form-label">Descrição</label>
+                <input
+                  id="task-input"
+                  type="text"
+                  class="form-input"
+                  placeholder="Ex.: Estudar JavaScript"
+                />
+              </div>
+
+              <div>
+                <label for="task-date" class="form-label"
+                  >Data (opcional)</label
+                >
+                <input id="task-date" type="date" class="form-input" />
+              </div>
+            </div>
+
+            <div class="mt-4 flex flex-col sm:flex-row gap-3 sm:items-center">
+              <button id="add-button" type="submit" class="btn-primary">
+                Adicionar
+              </button>
+              <p id="feedback" class="feedback-message" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <div class="mt-6 flex items-center justify-between gap-2">
+            <h2 class="text-xl font-semibold font-sans">Tarefas</h2>
+            <span id="task-counter" class="counter-pill">0 tarefas</span>
+          </div>
+
+          <ul id="task-list" class="task-list mt-4"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const todoForm = document.getElementById("todo-form");
+      const taskInput = document.getElementById("task-input");
+      const taskDate = document.getElementById("task-date");
+      const taskList = document.getElementById("task-list");
+      const taskCounter = document.getElementById("task-counter");
+      const feedback = document.getElementById("feedback");
+
+      function showFeedback(message, isError) {
+        feedback.textContent = message;
+        feedback.classList.remove("text-mocha-green", "text-mocha-red");
+
+        if (isError) {
+          feedback.classList.add("text-mocha-red");
+        } else {
+          feedback.classList.add("text-mocha-green");
+        }
+      }
+
+      function formatDateValue(dateValue) {
+        if (!dateValue) {
+          return "Sem data definida";
+        }
+
+        const [year, month, day] = dateValue.split("-");
+        return `${day}/${month}/${year}`;
+      }
+
+      function updateCounter() {
+        const tasks = taskList.children;
+        let totalTasks = 0;
+
+        for (let i = 0; i < tasks.length; i += 1) {
+          totalTasks += 1;
+        }
+
+        let suffix = "tarefas";
+
+        if (totalTasks === 1) {
+          suffix = "tarefa";
+        }
+
+        taskCounter.textContent = `${totalTasks} ${suffix}`;
+      }
+
+      function validateTask(description) {
+        const trimmedDescription = description.trim();
+
+        if (trimmedDescription.length === 0) {
+          showFeedback("Digite uma tarefa antes de adicionar.", true);
+          return null;
+        }
+
+        return trimmedDescription;
+      }
+
+      function removeTask(taskItem) {
+        if (taskList.children.length === 0 || !taskList.contains(taskItem)) {
+          showFeedback("Não há tarefas válidas para remover.", true);
+          return;
+        }
+
+        taskItem.remove();
+        updateCounter();
+        showFeedback("Tarefa removida com sucesso.", false);
+      }
+
+      function createTaskItem(description, dateValue) {
+        const listItem = document.createElement("li");
+        listItem.className = "task-item";
+
+        const taskDetails = document.createElement("div");
+        taskDetails.className = "task-details";
+
+        const title = document.createElement("p");
+        title.className = "task-title";
+        title.textContent = description;
+
+        const dateText = document.createElement("p");
+        dateText.className = "task-date";
+        dateText.textContent = `Data: ${formatDateValue(dateValue)}`;
+
+        taskDetails.appendChild(title);
+        taskDetails.appendChild(dateText);
+
+        const actions = document.createElement("div");
+        actions.className = "task-actions";
+
+        const completeButton = document.createElement("button");
+        completeButton.type = "button";
+        completeButton.className = "btn-complete";
+        completeButton.textContent = "Concluir";
+
+        const removeButton = document.createElement("button");
+        removeButton.type = "button";
+        removeButton.className = "btn-remove";
+        removeButton.textContent = "Remover";
+
+        completeButton.addEventListener("click", () => {
+          listItem.classList.toggle("task-item-completed");
+          const done = listItem.classList.contains("task-item-completed");
+
+          if (done) {
+            completeButton.textContent = "Desfazer";
+            showFeedback("Tarefa concluída.", false);
+          } else {
+            completeButton.textContent = "Concluir";
+            showFeedback("Tarefa reaberta.", false);
+          }
+        });
+
+        removeButton.addEventListener("click", () => {
+          removeTask(listItem);
+        });
+
+        actions.appendChild(completeButton);
+        actions.appendChild(removeButton);
+
+        listItem.appendChild(taskDetails);
+        listItem.appendChild(actions);
+
+        return listItem;
+      }
+
+      function addTask() {
+        const validDescription = validateTask(taskInput.value);
+
+        if (!validDescription) {
+          return;
+        }
+
+        const taskItem = createTaskItem(validDescription, taskDate.value);
+        taskList.appendChild(taskItem);
+
+        taskInput.value = "";
+        taskDate.value = "";
+        taskInput.focus();
+
+        updateCounter();
+        showFeedback("Tarefa adicionada com sucesso.", false);
+      }
+
+      todoForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        addTask();
+      });
+
+      taskInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          addTask();
+        }
+      });
+
+      updateCounter();
+    </script>
+  </body>
 </html>
