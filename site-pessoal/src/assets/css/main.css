@@ -34,7 +34,7 @@
 
 @theme {
   --font-mono: "JetBrains Mono NF", monospace;
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "Google Sans Flex", sans-serif;
   --font-serif: "IBM Plex Serif", serif;
   --color-mocha-rosewater: #f5e0dc;
   --color-mocha-flamingo: #f2cdcd;
