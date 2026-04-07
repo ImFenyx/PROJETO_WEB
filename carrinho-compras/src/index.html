@@ -1,12 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR" class="bg-mocha-crust">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Carrinho de Compras Simples</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,100..1000&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./output.css" />
   </head>
-  <body>
+  <body
+    class="min-h-screen bg-linear-to-b from-mocha-base via-mocha-mantle to-mocha-crust font-sans text-mocha-text"
+  >
+    <header class="mx-auto w-full max-w-6xl px-4 pt-8 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-serif italic text-mocha-mauve sm:text-4xl">
+        Sistema de Carrinho de Compras
+      </h1>
+      <p class="mt-2 text-sm text-mocha-subtext1 sm:text-base">
+        Selecione produtos, acompanhe quantidades e veja o total da compra.
+      </p>
+    </header>
+
+    <main class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+      <div class="app-grid">
+        <section class="panel" aria-labelledby="produtos-heading">
+          <div class="panel-header">
+            <h2 id="produtos-heading" class="panel-title">Produtos</h2>
+            <label class="filter-label" for="product-filter">
+              Filtrar por preço
+            </label>
+            <select id="product-filter" class="filter-select" name="productFilter">
+              <option value="todos">Todos</option>
+              <option value="ate50">Até R$50</option>
+              <option value="acima50">Acima de R$50</option>
+            </select>
+          </div>
+
+          <div id="products-list" class="product-list" aria-live="polite"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="carrinho-heading">
+          <div class="panel-header">
+            <h2 id="carrinho-heading" class="panel-title">Carrinho</h2>
+            <p class="panel-description">Itens adicionados e subtotal por produto.</p>
+          </div>
+
+          <ul id="cart-list" class="cart-list" aria-live="polite"></ul>
+
+          <p id="cart-empty-message" class="empty-message">
+            Carrinho vazio.
+          </p>
+
+          <div class="total-box">
+            <span>Total da compra</span>
+            <strong id="cart-total-value">R$ 0,00</strong>
+          </div>
+        </section>
+      </div>
+    </main>
+
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
