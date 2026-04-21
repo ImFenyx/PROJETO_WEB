@@ -1,107 +1,107 @@
 @import "tailwindcss";
 
 @theme {
-	--font-sans: "Google Sans Flex", sans-serif;
-	--font-serif: "IBM Plex Serif", serif;
+  --font-sans: "Google Sans Flex", sans-serif;
+  --font-serif: "IBM Plex Serif", serif;
 
-	--color-mocha-mauve: #cba6f7;
-	--color-mocha-red: #f38ba8;
-	--color-mocha-peach: #fab387;
-	--color-mocha-yellow: #f9e2af;
-	--color-mocha-green: #a6e3a1;
-	--color-mocha-lavender: #b4befe;
+  --color-mocha-mauve: #cba6f7;
+  --color-mocha-red: #f38ba8;
+  --color-mocha-peach: #fab387;
+  --color-mocha-yellow: #f9e2af;
+  --color-mocha-green: #a6e3a1;
+  --color-mocha-lavender: #b4befe;
 
-	--color-mocha-text: #cdd6f4;
-	--color-mocha-subtext1: #bac2de;
-	--color-mocha-subtext0: #a6adc8;
-	--color-mocha-overlay1: #7f849c;
-	--color-mocha-surface2: #585b70;
-	--color-mocha-surface1: #45475a;
-	--color-mocha-surface0: #313244;
-	--color-mocha-base: #1e1e2e;
-	--color-mocha-mantle: #181825;
-	--color-mocha-crust: #11111b;
+  --color-mocha-text: #cdd6f4;
+  --color-mocha-subtext1: #bac2de;
+  --color-mocha-subtext0: #a6adc8;
+  --color-mocha-overlay1: #7f849c;
+  --color-mocha-surface2: #585b70;
+  --color-mocha-surface1: #45475a;
+  --color-mocha-surface0: #313244;
+  --color-mocha-base: #1e1e2e;
+  --color-mocha-mantle: #181825;
+  --color-mocha-crust: #11111b;
 }
 
 @layer components {
-	.app-grid {
-		@apply grid grid-cols-1 gap-6 lg:grid-cols-2;
-	}
+  .app-grid {
+    @apply grid grid-cols-1 gap-6 lg:grid-cols-2;
+  }
 
-	.panel {
-		@apply rounded-2xl border border-mocha-surface1 bg-mocha-surface0/70 p-5 backdrop-blur-sm sm:p-6;
-	}
+  .panel {
+    @apply rounded-2xl border border-mocha-surface1 bg-mocha-surface0/70 p-5 backdrop-blur-sm sm:p-6;
+  }
 
-	.panel-header {
-		@apply mb-5 flex flex-col gap-2;
-	}
+  .panel-header {
+    @apply mb-5 flex flex-col gap-2;
+  }
 
-	.panel-title {
-		@apply text-2xl font-serif font-bold italic text-mocha-mauve;
-	}
+  .panel-title {
+    @apply text-2xl font-serif font-bold italic text-mocha-mauve;
+  }
 
-	.panel-description {
-		@apply text-sm text-mocha-subtext1;
-	}
+  .panel-description {
+    @apply text-sm text-mocha-subtext1;
+  }
 
-	.filter-label {
-		@apply mt-1 text-sm font-semibold text-mocha-subtext1;
-	}
+  .filter-label {
+    @apply mt-1 text-sm font-semibold text-mocha-subtext1;
+  }
 
-	.filter-select {
-		@apply mt-1 w-full rounded-xl border border-mocha-surface2 bg-mocha-mantle px-4 py-2.5 text-mocha-text outline-none transition-colors duration-200 focus:border-mocha-mauve;
-	}
+  .filter-select {
+    @apply mt-1 w-full rounded-xl border border-mocha-surface2 bg-mocha-mantle px-4 py-2.5 text-mocha-text outline-none transition-colors duration-200 focus:border-mocha-mauve;
+  }
 
-	.product-list,
-	.cart-list {
-		@apply flex flex-col gap-3;
-	}
+  .product-list,
+  .cart-list {
+    @apply flex flex-col gap-3;
+  }
 
-	.product-card {
-		@apply flex flex-col gap-3 rounded-xl border border-mocha-surface1 bg-mocha-mantle p-4 sm:flex-row sm:items-center sm:justify-between;
-	}
+  .product-card {
+    @apply flex flex-col gap-3 rounded-xl border border-mocha-surface1 bg-mocha-mantle p-4 sm:flex-row sm:items-center sm:justify-between;
+  }
 
-	.product-name {
-		@apply text-base font-semibold text-mocha-text;
-	}
+  .product-name {
+    @apply text-base font-semibold text-mocha-text;
+  }
 
-	.product-price {
-		@apply text-sm font-semibold text-mocha-yellow;
-	}
+  .product-price {
+    @apply text-sm font-semibold text-mocha-yellow;
+  }
 
-	.cart-item {
-		@apply flex flex-col gap-2 rounded-xl border border-mocha-surface1 bg-mocha-mantle p-4;
-	}
+  .cart-item {
+    @apply flex flex-col gap-2 rounded-xl border border-mocha-surface1 bg-mocha-mantle p-4;
+  }
 
-	.cart-item-row {
-		@apply flex items-center justify-between gap-3;
-	}
+  .cart-item-row {
+    @apply flex items-center justify-between gap-3;
+  }
 
-	.cart-item-name {
-		@apply text-sm font-semibold text-mocha-text sm:text-base;
-	}
+  .cart-item-name {
+    @apply text-sm font-semibold text-mocha-text sm:text-base;
+  }
 
-	.cart-item-meta {
-		@apply text-sm text-mocha-subtext0;
-	}
+  .cart-item-meta {
+    @apply text-sm text-mocha-subtext0;
+  }
 
-	.item-subtotal {
-		@apply text-sm font-semibold text-mocha-peach;
-	}
+  .item-subtotal {
+    @apply text-sm font-semibold text-mocha-peach;
+  }
 
-	.btn-action {
-		@apply inline-flex cursor-pointer items-center justify-center rounded-xl bg-mocha-mauve px-4 py-2 text-sm font-semibold text-mocha-crust transition-colors duration-200 hover:bg-mocha-lavender;
-	}
+  .btn-action {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-xl bg-mocha-mauve px-4 py-2 text-sm font-semibold text-mocha-crust transition-colors duration-200 hover:bg-mocha-lavender;
+  }
 
-	.btn-remove {
-		@apply inline-flex cursor-pointer items-center justify-center rounded-lg border border-mocha-red/60 bg-mocha-red/10 px-3 py-1.5 text-xs font-semibold text-mocha-red transition-colors duration-200 hover:bg-mocha-red/20;
-	}
+  .btn-remove {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-lg border border-mocha-red/60 bg-mocha-red/10 px-3 py-1.5 text-xs font-semibold text-mocha-red transition-colors duration-200 hover:bg-mocha-red/20;
+  }
 
-	.empty-message {
-		@apply mt-4 rounded-xl border border-dashed border-mocha-surface2 bg-mocha-mantle p-4 text-center text-sm text-mocha-overlay1;
-	}
+  .empty-message {
+    @apply mt-4 rounded-xl border border-dashed border-mocha-surface2 bg-mocha-mantle p-4 text-center text-sm text-mocha-overlay1;
+  }
 
-	.total-box {
-		@apply mt-5 flex items-center justify-between rounded-xl border border-mocha-surface2 bg-mocha-mantle px-4 py-3 text-sm font-semibold text-mocha-text sm:text-base;
-	}
+  .total-box {
+    @apply mt-5 flex items-center justify-between rounded-xl border border-mocha-surface2 bg-mocha-mantle px-4 py-3 text-sm font-semibold text-mocha-text sm:text-base;
+  }
 }
