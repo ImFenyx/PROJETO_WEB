@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Google Sans Flex", sans-serif;
+  --font-serif: "IBM Plex Serif", serif;
+
+  --color-mocha-rosewater: #f5e0dc;
+  --color-mocha-flamingo: #f2cdcd;
+  --color-mocha-pink: #f5c2e7;
+  --color-mocha-mauve: #cba6f7;
+  --color-mocha-red: #f38ba8;
+  --color-mocha-maroon: #eba0ac;
+  --color-mocha-peach: #fab387;
+  --color-mocha-yellow: #f9e2af;
+  --color-mocha-green: #a6e3a1;
+  --color-mocha-teal: #94e2d5;
+  --color-mocha-sky: #89dceb;
+  --color-mocha-sapphire: #74c7ec;
+  --color-mocha-blue: #89b4fa;
+  --color-mocha-lavender: #b4befe;
+
+  --color-mocha-text: #cdd6f4;
+  --color-mocha-subtext1: #bac2de;
+  --color-mocha-subtext0: #a6adc8;
+  --color-mocha-overlay2: #9399b2;
+  --color-mocha-overlay1: #7f849c;
+  --color-mocha-overlay0: #6c7086;
+  --color-mocha-surface2: #585b70;
+  --color-mocha-surface1: #45475a;
+  --color-mocha-surface0: #313244;
+  --color-mocha-base: #1e1e2e;
+  --color-mocha-mantle: #181825;
+  --color-mocha-crust: #11111b;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-mocha-surface1 bg-mocha-surface0/70 p-5 backdrop-blur-sm sm:p-6;
+  }
+
+  .panel-header {
+    @apply mb-5 flex flex-col gap-2;
+  }
+
+  .panel-title {
+    @apply text-2xl font-serif font-bold italic text-mocha-mauve;
+  }
+
+  .panel-description {
+    @apply text-sm text-mocha-subtext1;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-mocha-subtext1;
+  }
+
+  .form-input {
+    @apply mt-1 w-full rounded-xl border border-mocha-surface2 bg-mocha-mantle px-4 py-2.5 text-mocha-text outline-none transition-colors duration-200 placeholder:text-mocha-overlay0 focus:border-mocha-mauve;
+  }
+
+  .form-select {
+    @apply mt-1 w-full rounded-xl border border-mocha-surface2 bg-mocha-mantle px-4 py-2.5 text-mocha-text outline-none transition-colors duration-200 focus:border-mocha-mauve;
+  }
+
+  .btn-primary {
+    @apply cursor-pointer rounded-xl bg-mocha-mauve px-6 py-2.5 font-semibold text-mocha-crust transition-colors duration-200 hover:bg-mocha-lavender active:bg-mocha-blue;
+  }
+
+  .btn-secondary {
+    @apply cursor-pointer rounded-xl border border-mocha-surface2 bg-mocha-mantle px-6 py-2.5 font-semibold text-mocha-text transition-colors duration-200 hover:border-mocha-mauve hover:text-mocha-mauve;
+  }
+
+  .data-table {
+    @apply w-full border-collapse;
+  }
+
+  .data-table thead th {
+    @apply border-b border-mocha-surface2 bg-mocha-mantle px-4 py-3 text-left text-sm font-semibold text-mocha-subtext1;
+  }
+
+  .data-table tbody td {
+    @apply border-b border-mocha-surface1 px-4 py-3 text-sm text-mocha-text;
+  }
+
+  .data-table tbody tr:hover {
+    @apply bg-mocha-surface0/50;
+  }
+
+  .data-table tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .stat-card {
+    @apply flex flex-col items-center gap-1 rounded-xl border border-mocha-surface1 bg-mocha-mantle p-4 text-center;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold text-mocha-text;
+  }
+
+  .stat-label {
+    @apply text-xs font-semibold text-mocha-overlay1 uppercase tracking-wider;
+  }
+
+  .badge {
+    @apply inline-block rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide;
+  }
+
+  .badge-aprovado {
+    @apply bg-mocha-green/20 text-mocha-green;
+  }
+
+  .badge-recuperacao {
+    @apply bg-mocha-yellow/20 text-mocha-yellow;
+  }
+
+  .badge-reprovado {
+    @apply bg-mocha-red/20 text-mocha-red;
+  }
+
+  .alert-success {
+    @apply rounded-xl border border-mocha-green/30 bg-mocha-green/10 px-4 py-3 text-sm text-mocha-green;
+  }
+
+  .alert-warning {
+    @apply rounded-xl border border-mocha-yellow/30 bg-mocha-yellow/10 px-4 py-3 text-sm text-mocha-yellow;
+  }
+
+  .alert-danger {
+    @apply rounded-xl border border-mocha-red/30 bg-mocha-red/10 px-4 py-3 text-sm text-mocha-red;
+  }
+}
