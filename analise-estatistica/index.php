@@ -151,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <main class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8 space-y-6">
 
-            <section class="panel" aria-labelledby="stats-heading">
+            <section class="panel">
                 <div class="panel-header">
                     <h2 id="stats-heading" class="panel-title">Estatísticas da Turma</h2>
                     <p class="panel-description">Resumo geral do desempenho.</p>
@@ -215,7 +215,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <?php endif; ?>
             </section>
 
-            <section class="panel" aria-labelledby="tabela-heading">
+            <section class="panel">
                 <div class="panel-header">
                     <h2 id="tabela-heading" class="panel-title">Dados dos Alunos</h2>
                     <p class="panel-description">Resultado individual de cada aluno.</p>
@@ -278,7 +278,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <main class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
 
-            <section class="panel" aria-labelledby="turma-heading">
+            <section class="panel">
                 <div class="panel-header">
                     <h2 id="turma-heading" class="panel-title">Dados da Turma</h2>
                     <p class="panel-description">Informe o nome da turma e a quantidade de alunos.</p>
@@ -288,8 +288,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <div>
                             <label for="nome_turma" class="form-label">Nome da Turma</label>
-                            <input id="nome_turma" name="nome_turma" type="text" required
-                                placeholder="Ex.: 3º DSM - Matutino" class="form-input" />
+                            <input id="nome_turma" name="nome_turma" type="text" required placeholder="Ex.: 3º DS Mtec-PI"
+                                class="form-input" />
                         </div>
                         <div>
                             <label for="qtde_alunos" class="form-label">Quantidade de Alunos</label>
