@@ -294,8 +294,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </div>
                         <div>
                             <label for="qtde_alunos" class="form-label">Quantidade de Alunos</label>
-                            <input id="qtde_alunos" name="qtde_alunos" type="number" min="1" max="67" required
-                                placeholder="Ex.: 67" class="form-input" />
+                            <input id="qtde_alunos" name="qtde_alunos" type="number" min="1" max="10" required
+                                placeholder="Ex.: 10" class="form-input" />
                         </div>
                     </div>
 
