@@ -142,10 +142,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <?php if ($formularioEnviado): ?>
         <header class="mx-auto w-full max-w-6xl px-4 pt-8 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-serif italic text-mocha-mauve sm:text-4xl">
-                Relatório — <?php htmlspecialchars($nomeTurma) ?>
+                Relatório — <?php echo htmlspecialchars($nomeTurma) ?>
             </h1>
             <p class="mt-2 text-sm text-mocha-subtext1 sm:text-base">
-                Análise estatística completa da turma com <?php $qtdeAlunos ?> aluno(s).
+                Análise estatística completa da turma com <?php echo $qtdeAlunos ?> aluno(s).
             </p>
         </header>
 
@@ -159,38 +159,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
                     <div class="stat-card">
-                        <span class="stat-value"><?php fmt($mediaGeral) ?></span>
+                        <span class="stat-value"><?php echo fmt($mediaGeral) ?></span>
                         <span class="stat-label">Média Geral</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-value text-mocha-green"><?php fmt($maiorMedia) ?></span>
+                        <span class="stat-value text-mocha-green"><?php echo fmt($maiorMedia) ?></span>
                         <span class="stat-label">Maior Média</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-value text-mocha-red"><?php fmt($menorMedia) ?></span>
+                        <span class="stat-value text-mocha-red"><?php echo fmt($menorMedia) ?></span>
                         <span class="stat-label">Menor Média</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-value"><?php fmt($somaTotalNotas) ?></span>
+                        <span class="stat-value"><?php echo fmt($somaTotalNotas) ?></span>
                         <span class="stat-label">Soma Total</span>
                     </div>
                 </div>
 
                 <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
                     <div class="stat-card border-mocha-green/30">
-                        <span class="stat-value text-mocha-green"><?php $aprovados ?></span>
+                        <span class="stat-value text-mocha-green"><?php echo $aprovados ?></span>
                         <span class="stat-label">Aprovados</span>
                     </div>
                     <div class="stat-card border-mocha-yellow/30">
-                        <span class="stat-value text-mocha-yellow"><?php $recuperacoes ?></span>
+                        <span class="stat-value text-mocha-yellow"><?php echo $recuperacoes ?></span>
                         <span class="stat-label">Recuperação</span>
                     </div>
                     <div class="stat-card border-mocha-red/30">
-                        <span class="stat-value text-mocha-red"><?php $reprovados ?></span>
+                        <span class="stat-value text-mocha-red"><?php echo $reprovados ?></span>
                         <span class="stat-label">Reprovados</span>
                     </div>
                     <div class="stat-card border-mocha-mauve/30">
-                        <span class="stat-value text-mocha-mauve"><?php fmt($percentualAprovacao) ?>%</span>
+                        <span class="stat-value text-mocha-mauve"><?php echo fmt($percentualAprovacao) ?>%</span>
                         <span class="stat-label">% Aprovação</span>
                     </div>
                 </div>
@@ -199,17 +199,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <section>
                 <?php if ($percentualAprovacao >= 70): ?>
                     <div class="alert-success">
-                        &#x2714; Excelente! A turma apresenta um índice de aprovação de <?php fmt($percentualAprovacao) ?>%.
+                        &#x2714; Excelente! A turma apresenta um índice de aprovação de
+                        <?php echo fmt($percentualAprovacao) ?>%.
                         O desempenho geral é satisfatório.
                     </div>
                 <?php elseif ($percentualAprovacao >= 50): ?>
                     <div class="alert-warning">
-                        &#x26A0; Atenção! O índice de aprovação é de <?php fmt($percentualAprovacao) ?>%.
+                        &#x26A0; Atenção! O índice de aprovação é de <?php echo fmt($percentualAprovacao) ?>%.
                         A turma precisa de acompanhamento pedagógico.
                     </div>
                 <?php else: ?>
                     <div class="alert-danger">
-                        &#x2718; Crítico! Apenas <?php fmt($percentualAprovacao) ?>% de aprovação.
+                        &#x2718; Crítico! Apenas <?php echo fmt($percentualAprovacao) ?>% de aprovação.
                         Intervenção urgente é necessária.
                     </div>
                 <?php endif; ?>
@@ -239,17 +240,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <tbody>
                             <?php foreach ($alunos as $idx => $aluno): ?>
                                 <tr>
-                                    <td class="text-mocha-overlay1"><?php $idx + 1 ?></td>
-                                    <td class="font-semibold"><?php htmlspecialchars($aluno["nome"]) ?></td>
-                                    <td><?php fmt($aluno["nota1"]) ?></td>
-                                    <td><?php fmt($aluno["nota2"]) ?></td>
-                                    <td><?php fmt($aluno["trabalho"]) ?></td>
-                                    <td class="font-bold"><?php fmt($aluno["media"]) ?></td>
-                                    <td><?php fmt($aluno["raiz"]) ?></td>
-                                    <td><?php fmt($aluno["diffAbs"]) ?></td>
+                                    <td class="text-mocha-overlay1"><?php echo $idx + 1 ?></td>
+                                    <td class="font-semibold"><?php echo htmlspecialchars($aluno["nome"]) ?></td>
+                                    <td><?php echo fmt($aluno["nota1"]) ?></td>
+                                    <td><?php echo fmt($aluno["nota2"]) ?></td>
+                                    <td><?php echo fmt($aluno["trabalho"]) ?></td>
+                                    <td class="font-bold"><?php echo fmt($aluno["media"]) ?></td>
+                                    <td><?php echo fmt($aluno["raiz"]) ?></td>
+                                    <td><?php echo fmt($aluno["diffAbs"]) ?></td>
                                     <td>
-                                        <span class="badge <?php definirClasseBadge($aluno["situacao"]) ?>">
-                                            <?php $aluno["situacao"] ?>
+                                        <span class="badge <?php echo definirClasseBadge($aluno["situacao"]) ?>">
+                                            <?php echo $aluno["situacao"] ?>
                                         </span>
                                     </td>
                                 </tr>
