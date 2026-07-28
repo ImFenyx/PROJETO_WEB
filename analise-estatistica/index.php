@@ -14,6 +14,7 @@ function calcularRaizDaSoma($n1, $n2, $trabalho)
     return $raiz;
 }
 
+// Pega a diferença de maior e menor e deixa sempre positivo com abs
 function calcularDiferencaAbsoluta($n1, $n2, $trabalho)
 {
     $maior = max($n1, $n2, $trabalho);
@@ -22,6 +23,7 @@ function calcularDiferencaAbsoluta($n1, $n2, $trabalho)
     return $diferenca;
 }
 
+// Usa o parâmetro de média para definir a situação do aluno
 function definirSituacao($media)
 {
     if ($media >= 7.0) {
@@ -33,6 +35,7 @@ function definirSituacao($media)
     }
 }
 
+// Define a classe CSS da badge com base na situação definida pela função acima
 function definirClasseBadge($situacao)
 {
     if ($situacao === "Aprovado") {
@@ -44,6 +47,7 @@ function definirClasseBadge($situacao)
     }
 }
 
+// Só formata os números pra 2 casas decimais e troca ponto por vírgula
 function fmt($n)
 {
     return number_format($n, 2, ",", ".");
