@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@source "../";
+@source "../../src/pages/";
+@source "../../src/components/";
+
 @theme {
   --font-sans: "Google Sans Flex", sans-serif;
   --font-serif: "DM Serif Display", serif;

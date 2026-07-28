@@ -1,7 +1,6 @@
-create database if not exists crud_mundo;
+create database if not exists bd_mundo;
 
--- latin1 -> utf8
-use crud_mundo;
+use bd_mundo;
 
 create table if not exists
     governantes (
