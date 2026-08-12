@@ -6,6 +6,7 @@ Exercicios da Etec SJC | PW III
 
 | Pasta                  | Descrição                                           | Stack                                    |
 | ---------------------- | --------------------------------------------------- | ---------------------------------------- |
+| `crud-mundo-reborn`    | Recriação completa do CRUD Mundo com Typescript     | HTML, CSS, TypeScript, Bun, MySQL, Tailwind CSS, React |
 | `crud-mundo/`          | Sistema CRUD de países, cidades, continentes e governantes | HTML, CSS, JavaScript, PHP, MySQL, Tailwind CSS |
 | `analise-estatistica/` | Sistema Web de Análise Estatística de Turma Escolar | HTML, CSS, JavaScript, PHP, Tailwind CSS |
 | `carrinho-compras/`    | Aplicação de carrinho de compras com localStorage   | HTML, CSS, JavaScript, Tailwind CSS      |
