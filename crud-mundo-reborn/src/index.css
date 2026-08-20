@@ -61,6 +61,10 @@
     --color-primary: var(--primary);
     --color-text: var(--text);
     --color-subtext: var(--subtext);
+    --color-danger: var(--danger);
+    --color-info: var(--info);
+    --color-success: var(--success);
+    --color-warning: var(--warning);
 
     --radius-sm: 0.5rem;
     --radius-md: 1rem;
@@ -78,6 +82,10 @@
     --primary: var(--color-mocha-mauve);
     --text: var(--color-mocha-text);
     --subtext: var(--color-mocha-subtext1);
+    --danger: var(--color-mocha-red);
+    --info: var(--color-mocha-blue);
+    --success: var(--color-mocha-green);
+    --warning: var(--color-mocha-yellow);
     --hero-from: var(--color-mocha-base);
     --hero-via: var(--color-mocha-mantle);
     --hero-to: var(--color-mocha-crust);
@@ -92,6 +100,10 @@
         --primary: var(--color-latte-mauve);
         --text: var(--color-latte-text);
         --subtext: var(--color-latte-subtext1);
+        --danger: var(--color-latte-red);
+        --info: var(--color-latte-blue);
+        --success: var(--color-latte-green);
+        --warning: var(--color-latte-yellow);
         --hero-from: var(--color-latte-base);
         --hero-via: var(--color-latte-mantle);
         --hero-to: var(--color-latte-crust);
